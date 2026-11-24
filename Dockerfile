@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget -q -O /etc/apt/sources.list.d/xpra-beta.sources \
       https://raw.githubusercontent.com/Xpra-org/xpra/master/packaging/repos/trixie/xpra-beta.sources && \
     apt-get update && apt-get install -y --no-install-recommends \
-      xpra xpra-x11 xpra-html5 chromium xserver-xorg-core xserver-xorg-video-dummy \      
+      xpra xpra-x11 xpra-html5 chromium chromium-sandbox xserver-xorg-core xserver-xorg-video-dummy \      
       xauth dbus-x11 xdotool wmctrl fonts-dejavu-core procps && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     useradd -m -u 10001 -s /bin/bash pilote
