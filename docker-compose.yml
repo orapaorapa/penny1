@@ -1,0 +1,21 @@
+# Prototype technique - 2 postes; aucune donnee Pennylane.
+services:
+  xpra-pilote:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    shm_size: "2gb"
+    ports:
+      - "${SERVER_LAN_IP:?Definir_SERVER_LAN_IP}:14500:14500"
+    environment:
+      SERVER_LAN_IP: "${SERVER_LAN_IP:?Definir_SERVER_LAN_IP}"
+      XPRA_PASSWORD: "${XPRA_PASSWORD:?Definir_XPRA_PASSWORD}"
+    volumes:
+      - chrome_pilote:/home/pilote/chromium-profile
+      - certificats_pilote:/home/pilote/certs
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  chrome_pilote:
+  certificats_pilote:
