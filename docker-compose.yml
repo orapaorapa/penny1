@@ -14,8 +14,6 @@ services:
     volumes:
       - chrome_pilote:/home/pilote/chromium-profile
       - certificats_pilote:/home/pilote/certs
-    security_opt:
-      - no-new-privileges:true
 volumes:
   chrome_pilote:
   certificats_pilote:
