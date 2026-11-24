@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     shm_size: "2gb"
     ports:
-      - "${SERVER_LAN_IP:?Definir_SERVER_LAN_IP}:14500:14500"
+       - "${SERVER_LAN_IP:?Definir_SERVER_LAN_IP}:8013:14500"
     environment:
       SERVER_LAN_IP: "${SERVER_LAN_IP:?Definir_SERVER_LAN_IP}"
       XPRA_PASSWORD: "${XPRA_PASSWORD:?Definir_XPRA_PASSWORD}"
